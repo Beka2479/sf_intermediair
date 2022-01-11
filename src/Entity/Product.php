@@ -25,6 +25,12 @@ class Product
     #[ORM\Column(type: 'integer')]
     private $stock;
 
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'products')]
+    private $category;
+
+    #[ORM\ManyToOne(targetEntity: Brand::class, inversedBy: 'products')]
+    private $brand;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +80,18 @@ class Product
     public function setStock(int $stock): self
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
