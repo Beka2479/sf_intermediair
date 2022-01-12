@@ -13,7 +13,7 @@ class ProductController extends AbstractController
     // Ainsi que celle qui affiche un produit en particulier.
 
     
-    #[Route('products', name: 'home')]
+    #[Route('/products', name: 'home')]
 
     public function productList(ProductRepository $productRepository)
     {
@@ -23,7 +23,7 @@ class ProductController extends AbstractController
     }
 
     
-    #[Route('product/{id}', name: 'product_show')]
+    #[Route('/product/{id}', name: 'product_show')]
 
     public function productShow($id, ProductRepository $productRepository)
     {
