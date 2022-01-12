@@ -1,0 +1,15 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	<h1>{{ batman }}</h1>
+	<h1>{{ front }}</h1>
+	{% for brand in brands %}
+
+		<img src="{{ asset('media/' ~ brand.media) }}" alt="{{ brand.name }}">
+		<h2>
+			<a href="{{ path('brand_show', {'id' : brand.id}) }}">{{ brand.name }}</a>
+		</h2>
+	{% endfor %}
+
+{% endblock %}
