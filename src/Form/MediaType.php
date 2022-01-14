@@ -12,10 +12,15 @@ class MediaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('src')
+            ->add('src',FileType::class, [
+                'mapped' => false
+            ])
             ->add('alt')
             ->add('title')
-            ->add('product')
+            ->add('product', EntityType::class, [
+                'class' => Product::class,
+                'choice_label' => 'name'
+            ])
             ->add('Enregistrer', SubmitType::class) ;
     }
 
