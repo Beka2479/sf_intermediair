@@ -8,6 +8,11 @@
 	</head>
 	<body>
 
+
+		{% for gproduct in gproducts.getAll %}
+			<h3>{{ gproduct.name }}</h3>
+		{% endfor %}
+
 		{% block main %}{% endblock %}
 
 	</body>

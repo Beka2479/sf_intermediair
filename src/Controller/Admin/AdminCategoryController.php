@@ -88,7 +88,7 @@ class AdminCategoryController extends AbstractController
     }
 
  
-    #[Route('admin/create/category/', name: 'dmin_category_create')]
+    #[Route('admin/create/category/', name: 'admin_category_create')]
     public function adminCategoryCreate(Request $request, EntityManagerInterface $entityManagerInterface, SluggerInterface $sluggerInterface)
     {
         $category = new Category();

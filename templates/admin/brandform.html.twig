@@ -1,0 +1,22 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+
+	<h1>{{ admin }}</h1>
+
+	{{form_start(brandForm)}}
+
+	{{form_label(brandForm.name, 'Nom')}}
+	{{form_widget(brandForm.name)}}
+
+	{{form_label(brandForm.description, 'Description')}}
+	{{form_widget(brandForm.description)}}
+
+	{{form_label(brandForm.media, 'Image')}}
+	{{form_widget(brandForm.media)}}
+
+	{{form_widget(brandForm.Enregistrer)}}
+
+	{{form_end(brandForm)}}
+
+{% endblock %}
